@@ -54,16 +54,39 @@ main {
     margin: 40px 0;
 }
 
-.hero-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+/* Hero Banner */
+.hero-banner {
+    position: relative;
+    width: 100%;
     border-radius: 16px;
-    padding: 48px 36px;
-    text-align: center;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     margin-bottom: 40px;
+}
+
+.banner-image {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(13, 13, 14, 0.98) 0%, rgba(13, 13, 14, 0.85) 60%, rgba(13, 13, 14, 0.4) 85%, transparent 100%);
+    padding: 32px 28px 24px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .status-badge {
@@ -209,10 +232,17 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-@media (max-width: 480px) {
-    .hero-card {
-        padding: 32px 20px;
+@media (max-width: 768px) {
+    .banner-text {
+        position: relative;
+        background: var(--card-bg);
+        padding: 24px 20px;
+        font-size: 0.95rem;
+        text-shadow: none;
     }
+}
+
+@media (max-width: 480px) {
     h1 {
         font-size: 1.8rem;
     }
